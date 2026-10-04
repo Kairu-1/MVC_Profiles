@@ -1,0 +1,31 @@
+﻿@model List<WebApplication1.Models.StudentModel>
+
+
+<h1>Welcome Student</h1>
+
+<div>
+    @{
+        foreach(StudentModel student in Model)
+        {
+            <h3>ID: </h3>
+            <label>@student.id</label>
+            <br />
+            <h3>First Name: </h3>
+            <label>@student.firstName</label>
+            <br />
+            <h3>Last Name: </h3>
+            <label>@student.lastName</label>
+            <br />
+            <h3>Address: </h3>
+            <label>@student.address</label>
+            <br />
+            <h3>Contact Number: </h3>
+            <label>@student.contactNum</label>
+            <br />
+            <h3>Date of Birth: </h3>
+            <label>@student.dateofBirth</label>
+            <br />
+            <br />
+        }
+    }
+</div>
