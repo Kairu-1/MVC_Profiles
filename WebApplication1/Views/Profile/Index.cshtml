@@ -1,0 +1,188 @@
+﻿@model WebApplication1.Models.ProfileModel
+
+<h1> Welcome! This is your Driver's License</h1>
+
+<style> 
+    .license{
+        width: 740px;
+        max-width: 100%;
+        margin: 20px auto;
+        border: 2px solid #999;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        color: #000;
+
+    }
+    .license-header{
+        text-align: center;
+        background: #7fd3f7;
+        padding: 10px;
+    }
+    
+    .license-header h1{
+        margin: 0;
+        font-size: 56px;
+        letter-spacing: 4px; 
+        color: #fff;
+    }
+   
+    .info-row{
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 10px;
+        text-align: center;
+    }
+
+    .field-label{
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .field-value{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .body{
+        display: flex;
+        gap: 20px;
+        padding: 10px 20px 20px 20px;
+    }
+
+    .photo{
+        width: 220px;
+        height: 260px;
+        border: 1px solid #666;
+        flex-shrink: 0;
+    }
+    
+    .photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .details{
+        flex-grow: 1;
+    }
+
+    .title-tag{
+        font-size: 32px;
+        font-weight: bold;
+        padding: 4px;
+        margin-bottom: 15px;
+        background: #7fd3f7;
+        text-align: center;
+    }
+
+    .name-address{
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+    
+    .stats-row{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .signature{
+        border-bottom: 2px solid #000;
+        font-size: 28px;
+        font-style: italic;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .signature-label{
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+</style>
+
+
+
+
+<div class="license" data-bs-theme="light">
+
+        <div class="license-header"> 
+            <h1> SPRINGFIELD, IL</h1>
+        </div>
+
+        <div class="info-row">
+            <div>
+                <div class ="field-label">License #</div>
+                <div class ="field-value">@Model.licenseNum</div>
+            </div>
+            <div>
+                <div class ="field-label">Issued</div>
+                <div class ="field-value">@Model.issueDate</div>
+            </div>
+            <div>
+                <div class ="field-label">Expires</div>
+                <div class ="field-value">@Model.expiration</div>
+            </div>
+        </div>
+
+        <div class="body">
+
+            <div class="photo">
+                <img src="~/images/picko.jpg" alt="my photo"/>
+            </div>
+
+            <div class="details">
+                <div class ="title-tag">DRIVER's LICENSE</div>
+
+                <div class="name-address">
+                    @Model.firstName @Model.lastName<br />
+                    @Model.address
+                </div>
+                <div class="stats-row">
+                <div>
+                    <div class="field-label">Sex</div>
+                    <div class="field-value">@Model.sex</div>
+                </div>
+                <div>
+                    <div class="field-label">Size</div>
+                    <div class="field-value">@Model.size</div>
+                </div>
+                <div>
+                    <div class="field-label">Weight</div>
+                    <div class="field-value">@Model.weight</div>
+                </div>
+                <div>
+                    <div class="field-label">Eyes</div>
+                    <div class="field-value">@Model.eyes</div>
+                </div>
+            </div>
+
+            <div class="signature">@Model.firstName @Model.lastName</div>
+            <div class="signature-label">SIGNATURE</div>
+            </div>
+            
+        </div>
+        
+</div>
+
+            
+            
+        
+            
+
+
+
+
+
+
+
+   
+
+   
+
