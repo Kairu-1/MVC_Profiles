@@ -1,0 +1,13 @@
+﻿@model WebApplication1.Models.CarlProfile
+@{
+    ViewData["title"] = "Profile ko po";
+}
+
+<h4> Name :</h4>
+<p>@Model.Fullname</p>
+<h4> Address :</h4>
+<p>@Model.Address </p>
+<h4> ContactNumber :</h4>
+<p>@Model.ContactNumber </p>
+<h4> DateOfBirth :</h4>
+<p>@Model.DateOfBirth.ToString("MM/dd/yyyy") </p>
