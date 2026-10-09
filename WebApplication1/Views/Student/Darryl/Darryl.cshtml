@@ -1,0 +1,56 @@
+﻿@model WebApplication1.Models.DarrylModel
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container d-flex justify-content-center my-5">
+    <div class="card id-card shadow-lg p-3 rounded-4" style="width: 800px; background-color: #ffffff; border: 4px solid #333;">
+        <!-- Header -->
+        <div class="text-center border-bottom pb-2 mb-3">
+            <div class="row align-items-center">
+                <div class="col-2 fw-bold fs-2" style="color:gold">≡≡≡</div>
+                <div class="col-8">
+                    <h2 class="fw-bold m-0" style="letter-spacing: 2px;">LEGIT PROGRAMMER</h2>
+                    <h5 class="text-secondary fw-semibold m-0">PROGRAMMER LICENSE</h5>
+                </div>
+                <div class="col-2 text-end fw-bold">@Model.StudentClass</div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="row">
+            <div class="col-4 text-center">
+                <div class="rounded border border-dark overflow-hidden d-flex flex-column align-items-center justify-content-center bg-light" style="height: 240px;">
+                    <img src="@Url.Content(Model.PhotoPath)" 
+                         alt="Darryl Photo" 
+                         class="img-fluid h-100 w-100" 
+                         style="object-fit: cover;" />
+                </div>
+                <small class="fw-bold d-block mt-2" style="color: red">
+                    @Model.ContactNumber<br>@Model.Email
+                </small>
+            </div>
+
+            <!-- Deets -->
+            <div class="col-8">
+                <p class="fw-bold fs-5 mb-2" style="color: green;">@Model.LicenseNumber</p>
+                <div class="squiggle border-bottom mb-2 pb-1 text-muted small">~~~~~~~~~~~~~~~~~~~~~~~~</div>
+                <p class="mb-1 fw-bold fs-4">NAME: @Model.FullName</p>
+                <p class="mb-1 text-muted">@Model.Address</p>
+                <p class="fw-bold fs-5 mb-2">Achievements:</p>
+                @foreach (var achievement in Model.Achievements)
+                {
+                    <p class="mb-1">- @achievement</p>
+                }
+                <p class="fw-bold fs-5 mb-2">Github:</p>
+                <p class="mb-1">- @Model.Github</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-4 pt-2 border-top text-end">
+            <p class="fs-4 text-dark fst-italic mb-0" style="font-family: 'Brush Script MT', cursive;">@Model.Signature</p>
+        </div>
+    </div>
+</div>
