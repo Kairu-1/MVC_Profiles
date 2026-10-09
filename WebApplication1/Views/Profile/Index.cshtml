@@ -1,13 +1,50 @@
 ﻿@model WebApplication1.Models.CarlProfile
 @{
-    ViewData["title"] = "Profile ko po";
+    ViewData["Title"] = "My Profile";
 }
+<link rel="stylesheet" href="~/Profile.css" asp-append-version="true" />
 
-<h4> Name :</h4>
-<p>@Model.Fullname</p>
-<h4> Address :</h4>
-<p>@Model.Address </p>
-<h4> ContactNumber :</h4>
-<p>@Model.ContactNumber </p>
-<h4> DateOfBirth :</h4>
-<p>@Model.DateOfBirth.ToString("MM/dd/yyyy") </p>
+<div class="profile-page">
+
+    <ul class="profile-info">
+        <li>
+            <span class="info-label">Fullname:</span>
+            <span class="info-value">@Model.Fullname</span>
+        </li>
+        <li>
+            <span class="info-label">Date Of Birth:</span>
+            <span class="info-value">@Model.DateOfBirth.ToString("MM/dd/yyyy")</span>
+        </li>
+        <li>
+            <span class="info-label">Course:</span>
+            <span class="info-value">@Model.Course</span>
+        </li>
+        <li>
+            <span class="info-label">Email:</span>
+            <span class="info-value">@Model.Email</span>
+        </li>
+        <li>
+            <span class="info-label">Address:</span>
+            <span class="info-value">@Model.Address</span>
+        </li>
+        <li>
+            <span class="info-label">Contact Number:</span>
+            <span class="info-value">@Model.ContactNumber</span>
+        </li>
+        <li>
+            <span class="info-label">GithubLink:</span>
+            <span class="info-value">@Model.GithubLink</span>
+        </li>
+
+    </ul>
+    <div class="profile-photo">
+        <img src="~/Image/GradPic.jpg" alt="Carl" />
+    </div>
+
+    <div class="profile-intro">
+        <p>I am a Computer Science student studying at Polytechnic University of the Philippines
+            currently trying to get my degree.
+        </p>
+    </div>
+
+</div>
